@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "80:8080"
+    env_file:
+      - postgres.env
+    volumes:
+      - ./app:/app
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    env_file:
+      - postgres.env
+  pg_admin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=password
+    ports:
+      - "81:80"

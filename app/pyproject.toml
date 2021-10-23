@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "fastapi-test-database"
+version = "0.1.0"
+description = "A demo project for testing relational database in fastapi"
+authors = ["jb <jeanb.rocher@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+SQLAlchemy = "^1.4.25"
+pydantic = "^1.8.2"
+fastapi = "^0.70.0"
+uvicorn = "^0.15.0"
+psycopg2-binary = "^2.9.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+black = "^21.9b0"
+reorder-python-imports = "^2.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
